@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+body {
+  margin: auto;
+}
+
+#box1 {
+  background: red;
+}
+
+#box3 {
+  background: green;
+}
+
+#box2 {
+  background: blue;
+}
+
+#box4 {
+  background: yellow;
+}
+
+#gameContainer {
+  background: grey;
+  display: flex;
+}
+
+#gameContainer2 {
+  display: flex;
+  margin: auto;
+}
+
+#box1,
+#box2,
+#box3,
+#box4 {
+  margin: 25px;
+  border-radius: 10px;
+  border: 5px solid black;
+  height: 150px;
+  width: 150px;
+}
+
+h5 {
+  padding-top: 45%;
+  margin: auto;
+}
