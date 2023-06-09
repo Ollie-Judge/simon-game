@@ -8,68 +8,57 @@ let gameContainer = document.getElementById("gameContainer");
 let randomPatternArray = [];
 let userPattern = [];
 
+let level = 0;
+
 const randomNumberGenerator = () => {
-  randomPatternArray.push(Math.floor(Math.random() * 4));
+  randomPatternArray.push(Math.floor(Math.random() * 4) + 1);
 };
-// take multiple events and check which one is rright
 
-const startGame = () => {
-  randomNumberGenerator();
-  console.log(randomPatternArray);
+randomNumberGenerator();
+console.log(randomPatternArray);
 
-  document.addEventListener("keypress", (event) => {
-    keyPress(event.key);
-  });
+const clickBox1 = () => {
+  userPattern.push(1);
+  level++;
+  console.log(userPattern);
+  console.log(level);
+  check();
+};
 
-  function keyPress(key) {
-    switch (key) {
-      case "1":
-        userPattern.push(1);
-        console.log(`user ${userPattern}`);
-        randomNumberGenerator();
-        console.log(`random ${randomPatternArray}`);
-        break;
+const clickBox2 = () => {
+  userPattern.push(2);
+  level++;
+  console.log(userPattern);
+  console.log(level);
+  check();
+};
 
-      case "2":
-        userPattern.push(2);
-        console.log(`user ${userPattern}`);
-        randomNumberGenerator();
-        console.log(`random ${randomPatternArray}`);
-        break;
+const clickBox3 = () => {
+  userPattern.push(3);
+  level++;
+  console.log(userPattern);
+  console.log(level);
+  check();
+};
 
-      case "3":
-        userPattern.push(3);
-        console.log(`user ${userPattern}`);
-        randomNumberGenerator();
-        console.log(`random ${randomPatternArray}`);
-        break;
+const clickBox4 = () => {
+  userPattern.push(4);
+  level++;
+  console.log(userPattern);
+  console.log(level);
+  check();
+};
 
-      case "4":
-        userPattern.push(4);
-        console.log(`user ${userPattern}`);
-        randomNumberGenerator();
-        console.log(`random ${randomPatternArray}`);
-        break;
-      default:
-        console.log(key);
+console.log(userPattern);
+
+// box1.console.log(`user ${userPattern}`);
+// console.log(`random ${randomPatternArray}`);
+
+const check = () => {
+  if (userPattern.length === randomPatternArray.length) {
+    console.log("same length");
+    if (userPattern[level] === randomPatternArray[level]) {
+      console.log("matching nubmers");
     }
-
-    /*gameContainer.addEventListener("click", (event) => {
-      if (event.click === box1) {
-        console.log("clicked box1");
-      }
-    });
-
-    box2.addEventListener("click", (event) => {
-      console.log("clicked box2");
-    });
-
-    box3.addEventListener("click", (event) => {
-      console.log("clicked box3");
-    });
-
-    box4.addEventListener("click", (event) => {
-      console.log("clicked box4");
-    });*/
   }
 };
