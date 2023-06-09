@@ -49,3 +49,7 @@ h5 {
   padding-top: 45%;
   margin: auto;
 }
+
+#startButtonContainer {
+  margin-top: 25px;
+}
